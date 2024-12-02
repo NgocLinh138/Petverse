@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Usecases\V1\PetSubType\**" />
+    <EmbeddedResource Remove="Usecases\V1\PetSubType\**" />
+    <None Remove="Usecases\V1\PetSubType\**" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+		<PackageReference Include="FluentValidation" Version="11.9.2" />
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.2" />
+		<PackageReference Include="Hangfire" Version="1.8.15" />
+		<PackageReference Include="Hangfire.AspNetCore" Version="1.8.15" />
+		<PackageReference Include="Hangfire.SqlServer" Version="1.8.15" />
+		<PackageReference Include="MediatR" Version="12.3.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Contract\Contract.csproj" />
+	  <ProjectReference Include="..\Domain\Domain.csproj" />
+	  <ProjectReference Include="..\Infrastructure.BlobStorage\Infrastructure.BlobStorage.csproj" />
+	  <ProjectReference Include="..\Infrastructure.PayOS\Infrastructure.PayOS.csproj" />
+	  <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+	  <ProjectReference Include="..\Persistence\Persistence.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Usecases\V1\Certification\Queries\" />
+	</ItemGroup>
+</Project>
